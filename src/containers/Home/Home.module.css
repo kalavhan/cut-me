@@ -1,0 +1,24 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.logo {
+  width: 300px;
+  align-self: flex-start;
+  justify-self: flex-start;
+}
+
+.title {
+  font-size: 48px;
+  color: #fff;
+  text-align: center;
+  justify-self: center;
+}
+
+.buttonSignUp {
+  width: 20%;
+}

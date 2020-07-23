@@ -1,0 +1,61 @@
+.homeSlider {
+  position: absolute;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  background-color: #ffb400;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  z-index: -1;
+}
+
+.sliderImage {
+  margin-top: 50px;
+  width: 400px;
+  height: auto;
+  max-height: 80%;
+  display: none;
+}
+
+.homeSlider > .active {
+  display: block;
+  color: blue;
+  animation: fadeIn 6s;
+}
+
+.homeSlider > .inactive { 
+  display: none;
+}
+
+.ulButtons {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  right: 10px;
+  bottom: 10px;
+}
+
+.ulButtons > li {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.ulButtons > .active {
+  color: blue;
+}
+
+.ulButtons > .inactive {
+  color: aliceblue;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0} 
+  30% {opacity: 1}
+  70% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  100% {display: none;}
+}
