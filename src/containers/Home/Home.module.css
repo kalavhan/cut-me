@@ -3,22 +3,31 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-content: center;
-}
-
-.logo {
-  width: 300px;
-  align-self: flex-start;
-  justify-self: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
   font-size: 48px;
   color: #fff;
-  text-align: center;
-  justify-self: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  z-index: 2;
 }
 
-.buttonSignUp {
-  width: 20%;
+.buttonHome {
+  width: 130px;
+  z-index: 2;
+  background-color: #2cbe19;
+  border: 0;
+  font-size: 13px;
+  color: #fff;
+  height: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.labelOr {
+  z-index: 2;
+  font-size: 12px;
 }

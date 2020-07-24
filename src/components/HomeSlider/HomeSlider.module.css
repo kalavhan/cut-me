@@ -1,19 +1,19 @@
 .homeSlider {
   position: absolute;
   height: 100vh;
-  max-height: 100vh;
+  max-height: 100%;
   width: 100%;
   background-color: #ffb400;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
-  z-index: -1;
 }
 
 .sliderImage {
-  margin-top: 50px;
-  width: 400px;
-  height: auto;
+  position: absolute;
+  align-self: center;
+  width: auto;
   max-height: 80%;
   display: none;
 }
@@ -37,6 +37,7 @@
 }
 
 .ulButtons > li {
+  z-index: 2;
   cursor: pointer;
   font-size: 30px;
 }
