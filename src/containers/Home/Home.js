@@ -23,7 +23,7 @@ const Home = props => {
 
   return (
     <div className={styles.home}>
-      <FormLogin formLoginState={formLoginState} setFormLoginState={setFormLoginState('inactive')} />
+      <FormLogin formLoginState={formLoginState} setFormLoginState={() => setFormLoginState('inactive')} />
       <HomeSlider />
       <h1 className={styles.title}>¡CUT THROUGH FASHION!</h1>
       <button onClick={() => setFormLoginState('active')} className={styles.buttonHome} type="button">Log In</button>

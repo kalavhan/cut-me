@@ -11,12 +11,18 @@
 
 .formLogin {
   display: flex;
-  z-index: 3;
+  z-index: 4;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #10bbb5;
   padding: 20px;  
+  position: relative;
+}
+
+.formLogin > h2 {
+  margin-top: 5px;
+  color: #fff;
 }
 
 .formLogin > label {
@@ -35,15 +41,28 @@
 .formLogin > label > input:focus {
   border-bottom: 2px solid rgb(68, 65, 240);
 }
-
 .formLogin > button {
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.2);
   border: none;
+}
+
+.formLogin > button:nth-of-type(1) {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  background-color: #f00;
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 20px;
+}
+
+.formLogin > button:nth-of-type(2) {
   background-color: #2cbe19;
   font-size: 17px;
   padding: 5px 20px 5px 20px;
-  color: #fff;
   border-radius: 15px;
-  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.2);
   margin-top: 30px;
 }
 
