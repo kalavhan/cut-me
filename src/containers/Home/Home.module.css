@@ -31,3 +31,11 @@
   z-index: 2;
   font-size: 12px;
 }
+
+.loginFormActive {
+  display: flex;
+}
+
+.loginFormInactive {
+  display: none;
+}
