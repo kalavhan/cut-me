@@ -17,13 +17,59 @@ const Home = props => {
       });
   };
 
-  const hideLoginForm = () => {
-    setFormLoginState('inactive');
+  const login = e => {
+    e.preventDefault();
+    // e.target.email.value;
+    // e.target.password.value;
+    // const myPost = {
+    //   email: 'A post about true facts',
+    //   pass
+    // }
+    // const options = {
+    //   method: 'POST',
+    //   body: JSON.stringify(myPost),
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   }
+    // fetch(`https://calm-crag-76746.herokuapp.com/users/signin`)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //   });
+  };
+
+  const register = e => {
+    e.preventDefault();
+    const myPost = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+      password_confirmation: e.target.passwordConfirmation.value,
+      first_name: e.target.firstName.value,
+      middle_name: e.target.middleName.value,
+      last_name: e.target.lastName.value,
+    };
+
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(myPost),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    };
+
+    fetch('https://calm-crag-76746.herokuapp.com/users/signup', options)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   };
 
   return (
     <div className={styles.home}>
-      <FormLogin formLoginState={formLoginState} setFormLoginState={() => setFormLoginState('inactive')} />
+      <FormLogin formLoginState={formLoginState} setFormLoginState={() => setFormLoginState('inactive')} login={login} />
+      <FormResgister />
       <HomeSlider />
       <h1 className={styles.title}>¡CUT THROUGH FASHION!</h1>
       <button onClick={() => setFormLoginState('active')} className={styles.buttonHome} type="button">Log In</button>
