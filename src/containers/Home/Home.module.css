@@ -15,16 +15,24 @@
   z-index: 2;
 }
 
-.buttonHome {
-  width: 130px;
+.home > button {
   z-index: 2;
   background-color: #2cbe19;
   border: 0;
-  font-size: 13px;
-  color: #fff;
   height: 30px;
-  border-radius: 15px;
   cursor: pointer;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.buttonHome {
+  width: 130px;
+  font-size: 13px;
+}
+
+.buttonAppointment {
+  width: 180px;
+  font-size: 14px;
 }
 
 .labelOr {

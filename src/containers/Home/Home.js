@@ -14,24 +14,33 @@ const Home = props => {
   const [formLoginState, setFormLoginState] = useState('inactive');
   const [formSignupState, setFormSignupState] = useState('inactive');
   const [formSent, setFormSent] = useState(false);
+
   const login = e => {
     e.preventDefault();
-    // e.target.email.value;
-    // e.target.password.value;
-    // const myPost = {
-    //   email: 'A post about true facts',
-    //   pass
-    // }
-    // const options = {
-    //   method: 'POST',
-    //   body: JSON.stringify(myPost),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // fetch(`https://calm-crag-76746.herokuapp.com/users/signin`)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //   });
+    setFormSent(true);
+    const myPost = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    };
+
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      body: JSON.stringify(myPost),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    };
+
+    fetch('https://calm-crag-76746.herokuapp.com/users/signin', options)
+      .then(response => response.json())
+      .then(data => {
+        if ('id' in data) {
+          setFormLoginState('inactive');
+          setFormSent(false);
+          setUser(data);
+        }
+      });
   };
 
   const signup = e => {
@@ -82,7 +91,7 @@ const Home = props => {
       />
       <HomeSlider />
       <h1 className={styles.title}>¡CUT THROUGH FASHION!</h1>
-      {'id' in user ? <h2>pop</h2> : (
+      {'id' in user ? <button type="button" className={styles.buttonAppointment}>Make an appoitment!</button> : (
         <>
           <button onClick={() => { setFormLoginState('active'); }} className={styles.buttonHome} type="button">Log In</button>
           <h2 className={styles.labelOr}> Or </h2>
