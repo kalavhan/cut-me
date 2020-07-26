@@ -5,7 +5,7 @@ import App from './components/App';
 import rootReducer from './reducers';
 import './style/main.css';
 
-const initializeUser = window.sessionStorage.getItem('user') !== null ? JSON.parse(window.sessionStorage.getItem('user')) : {};
+const initializeUser = window.sessionStorage.getItem('user') !== null ? JSON.parse(window.sessionStorage.getItem('user')) : null;
 const store = createStore(rootReducer, { user: initializeUser });
 
 ReactDOM.render(

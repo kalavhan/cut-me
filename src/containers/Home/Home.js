@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
-import { setUser } from '../../actions/index';
+import { setUser, removeUser } from '../../actions/index';
 import HomeSlider from '../../components/HomeSliderFolder/HomeSlider';
 import FormLogin from '../../components/formLogIn';
 import FormSignup from '../../components/formSignUp';
@@ -9,7 +9,7 @@ import Loading from '../../components/Loading/Loading';
 import styles from './Home.module.css';
 
 const Home = props => {
-  const { user, setUser } = props;
+  const { user, setUser, removeUser } = props;
   const history = useHistory();
   const [formLoginState, setFormLoginState] = useState('inactive');
   const [formSignupState, setFormSignupState] = useState('inactive');
@@ -90,8 +90,9 @@ const Home = props => {
         formSent={formSent}
       />
       <HomeSlider />
+      { user !== null && <button className={styles.logOut} type="button" onClick={() => removeUser(null)}>Log out</button> }
       <h1 className={styles.title}>¡CUT THROUGH FASHION!</h1>
-      {'id' in user ? (
+      {user !== null ? (
         <div className={styles.buttonGroup}>
           <button type="button" className={styles.buttonAppointment}>Search for a barber!</button>
           <button type="button" className={styles.buttonAppointment}>My appointments</button>
@@ -113,6 +114,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setUser: user => {
     dispatch(setUser(user));
+  },
+  removeUser: user => {
+    dispatch(removeUser(user));
   },
 });
 
