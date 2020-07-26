@@ -91,12 +91,16 @@ const Home = props => {
       />
       <HomeSlider />
       <h1 className={styles.title}>¡CUT THROUGH FASHION!</h1>
-      {'id' in user ? <button type="button" className={styles.buttonAppointment}>Make an appoitment!</button> : (
-        <>
+      {'id' in user ? (
+        <div className={styles.buttonGroup}>
+          <button type="button" className={styles.buttonAppointment}>Search for a barber!</button>
+          <button type="button" className={styles.buttonAppointment}>My appointments</button>
+        </div>
+      ) : (
+        <div className={styles.buttonGroup}>
           <button onClick={() => { setFormLoginState('active'); }} className={styles.buttonHome} type="button">Log In</button>
-          <h2 className={styles.labelOr}> Or </h2>
           <button onClick={() => setFormSignupState('active')} className={styles.buttonHome} type="button">Sign Up</button>
-        </>
+        </div>
       )}
     </div>
   );

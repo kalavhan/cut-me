@@ -15,14 +15,18 @@
   z-index: 2;
 }
 
-.home > button {
+.buttonGroup {
   z-index: 2;
+}
+
+.home > .buttonGroup > button {
   background-color: #2cbe19;
   border: 0;
   height: 30px;
   cursor: pointer;
   color: #fff;
   border-radius: 15px;
+  margin: 0 10px 0 10px
 }
 
 .buttonHome {
