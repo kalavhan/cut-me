@@ -5,7 +5,7 @@ import App from './components/App';
 import rootReducer from './reducers';
 import './style/main.css';
 
-const store = createStore(rootReducer, { user: [], });
+const store = createStore(rootReducer, { user: {} });
 
 ReactDOM.render(
   <App store={store} />,

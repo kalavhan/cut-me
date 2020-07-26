@@ -1,7 +1,7 @@
-const userReducer = (state = [], action) => {
+const userReducer = (state = {}, action) => {
   switch (action.type) {
-    case 'GET_CATEGORIES':
-      return action.categories;
+    case 'SET_USER_INFO':
+      return action.user;
     default:
       return state;
   }

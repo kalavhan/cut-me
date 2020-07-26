@@ -9,12 +9,11 @@ import Loading from '../../components/Loading/Loading';
 import styles from './Home.module.css';
 
 const Home = props => {
-  const { user } = props;
+  const { user, setUser } = props;
   const history = useHistory();
   const [formLoginState, setFormLoginState] = useState('inactive');
   const [formSignupState, setFormSignupState] = useState('inactive');
   const [formSent, setFormSent] = useState(false);
-
   const login = e => {
     e.preventDefault();
     // e.target.email.value;
@@ -61,12 +60,8 @@ const Home = props => {
         if ('id' in data) {
           setFormSignupState('inactive');
           setFormSent(false);
-          // setUser(data);
+          setUser(data);
         }
-        console.log(data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
       });
   };
 
@@ -87,9 +82,13 @@ const Home = props => {
       />
       <HomeSlider />
       <h1 className={styles.title}>¡CUT THROUGH FASHION!</h1>
-      <button onClick={() => { setFormLoginState('active'); }} className={styles.buttonHome} type="button">Log In</button>
-      <h2 className={styles.labelOr}> Or </h2>
-      <button onClick={() => setFormSignupState('active')} className={styles.buttonHome} type="button">Sign Up</button>
+      {'id' in user ? <h2>pop</h2> : (
+        <>
+          <button onClick={() => { setFormLoginState('active'); }} className={styles.buttonHome} type="button">Log In</button>
+          <h2 className={styles.labelOr}> Or </h2>
+          <button onClick={() => setFormSignupState('active')} className={styles.buttonHome} type="button">Sign Up</button>
+        </>
+      )}
     </div>
   );
 };
