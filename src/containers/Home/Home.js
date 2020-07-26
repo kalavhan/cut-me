@@ -2,20 +2,18 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { setUser } from '../../actions/index';
-import HomeSlider from '../../components/HomeSlider/HomeSlider';
-import FormLogin from '../../components/formLogIn/formLogIn';
+import HomeSlider from '../../components/HomeSliderFolder/HomeSlider';
+import FormLogin from '../../components/formLogIn';
+import FormSignup from '../../components/formSignUp';
+import Loading from '../../components/Loading/Loading';
 import styles from './Home.module.css';
 
 const Home = props => {
   const { user } = props;
   const history = useHistory();
   const [formLoginState, setFormLoginState] = useState('inactive');
-  const filterMeals = strFilter => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${strFilter}`)
-      .then(response => response.json())
-      .then(data => {
-      });
-  };
+  const [formSignupState, setFormSignupState] = useState('inactive');
+  const [formSent, setFormSent] = useState(false);
 
   const login = e => {
     e.preventDefault();
@@ -37,19 +35,20 @@ const Home = props => {
     //   });
   };
 
-  const register = e => {
+  const signup = e => {
     e.preventDefault();
+    setFormSent(true);
     const myPost = {
       email: e.target.email.value,
       password: e.target.password.value,
-      password_confirmation: e.target.passwordConfirmation.value,
-      first_name: e.target.firstName.value,
-      middle_name: e.target.middleName.value,
+      password_confirm: e.target.passwordConfirmation.value,
+      name: e.target.name.value,
       last_name: e.target.lastName.value,
     };
 
     const options = {
       method: 'POST',
+      mode: 'cors',
       body: JSON.stringify(myPost),
       headers: {
         'Content-type': 'application/json',
@@ -59,6 +58,11 @@ const Home = props => {
     fetch('https://calm-crag-76746.herokuapp.com/users/signup', options)
       .then(response => response.json())
       .then(data => {
+        if ('id' in data) {
+          setFormSignupState('inactive');
+          setFormSent(false);
+          // setUser(data);
+        }
         console.log(data);
       })
       .catch(error => {
@@ -68,13 +72,24 @@ const Home = props => {
 
   return (
     <div className={styles.home}>
-      <FormLogin formLoginState={formLoginState} setFormLoginState={() => setFormLoginState('inactive')} login={login} />
-      <FormResgister />
+      {formSent === true ? <Loading /> : null}
+      <FormLogin
+        formLoginState={formLoginState}
+        setFormLoginState={() => setFormLoginState('inactive')}
+        login={login}
+        formSent={formSent}
+      />
+      <FormSignup
+        formSignupState={formSignupState}
+        setFormSignupState={() => setFormSignupState('inactive')}
+        signup={signup}
+        formSent={formSent}
+      />
       <HomeSlider />
       <h1 className={styles.title}>¡CUT THROUGH FASHION!</h1>
-      <button onClick={() => setFormLoginState('active')} className={styles.buttonHome} type="button">Log In</button>
+      <button onClick={() => { setFormLoginState('active'); }} className={styles.buttonHome} type="button">Log In</button>
       <h2 className={styles.labelOr}> Or </h2>
-      <button onClick={() => setFormLoginState('active')} className={styles.buttonHome} type="button">Sign Up</button>
+      <button onClick={() => setFormSignupState('active')} className={styles.buttonHome} type="button">Sign Up</button>
     </div>
   );
 };

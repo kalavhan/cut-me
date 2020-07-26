@@ -25,7 +25,7 @@ class HomeSlider extends React.Component {
     }, 5800);
   }
 
-  changeImage = (position) => {
+  changeImage(position) {
     this.lastPosition = position;
     this.setState({
       barber0c: position === 0 ? styles.active : styles.inactive,
