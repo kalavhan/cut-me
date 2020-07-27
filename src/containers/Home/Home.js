@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
+import PropTypes from 'prop-types';
 import { removeUser } from '../../actions/index';
 import HomeSlider from '../../components/HomeSliderFolder/HomeSlider';
 import FormLogin from '../../components/formLogIn';
@@ -12,7 +13,6 @@ const Home = props => {
   const history = useHistory();
   const [formLoginState, setFormLoginState] = useState('inactive');
   const [formSignupState, setFormSignupState] = useState('inactive');
-  const [formLoginValues, setFormLoginValues] = useState({ email: undefined, password: undefined });
 
   return (
     <div className={styles.home}>
@@ -40,6 +40,11 @@ const Home = props => {
       )}
     </div>
   );
+};
+
+Home.propTypes = {
+  user: PropTypes.objectOf(PropTypes.string).isRequired,
+  removeUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

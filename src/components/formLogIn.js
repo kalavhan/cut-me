@@ -4,7 +4,7 @@ import { setUser } from '../actions/index';
 import Loading from './Loading/Loading';
 import styles from '../style/form.module.css';
 
-const FormLogIn = ({ formLoginState, setFormLoginState, setUser}) => {
+const FormLogIn = ({ formLoginState, setFormLoginState, setUser }) => {
   const formClass = formLoginState === 'active' ? styles.active : styles.inactive;
   const [formSent, setFormSent] = useState(false);
   const [email, setEmail] = useState('');
