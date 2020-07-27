@@ -34,20 +34,30 @@
   padding: 0;
   right: 10px;
   bottom: 10px;
+  list-style: none;
 }
 
 .ulButtons > li {
+  margin: 0;
+  padding: 0;
+}
+
+.ulButtons > li > button {
   z-index: 2;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 1px;
+  padding: 5px;
+  width: 13px;
+  border: none;
+  border-radius: 6px;
 }
 
-.ulButtons > .active {
-  color: blue;
+.ulButtons > li > .active {
+  background-color: blue;
 }
 
-.ulButtons > .inactive {
-  color: aliceblue;
+.ulButtons > li > .inactive {
+  background-color: aliceblue;
 }
 
 @keyframes fadeIn {
