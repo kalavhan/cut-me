@@ -43,6 +43,8 @@
   font-size: 20px;
   color: #fff;
   padding: 0;
+  position: relative;
+  cursor: pointer;
 }
 
 .buttonLeft {
@@ -52,11 +54,21 @@
   z-index: 2;
 }
 
+.buttonLeft > svg {
+  position: absolute;
+  right: 22px;
+}
+
 .buttonRight {
   text-align: left;
   border-bottom-left-radius: 40px;
   border-top-left-radius: 40px;
   z-index: 10;
+}
+
+.buttonRight > svg {
+  position: absolute;
+  left: 22px;
 }
 
 .sliderCard {
