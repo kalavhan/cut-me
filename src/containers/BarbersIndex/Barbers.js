@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { faCaretSquareLeft, faCaretSquareRight } from '@fortawesome/free-regular-svg-icons';
@@ -11,13 +10,10 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import styles from './Barbers.module.css';
 
 const Barbers = props => {
-  const { user, barbers, getBarbers } = props;
-  const history = useHistory();
+  const { barbers, getBarbers } = props;
   const [sliderClass, setSliderClass] = useState(0);
   const [barbersArray, setBarbersArray] = useState([]);
   const [firstPosition, setFirstPosition] = useState([]);
-
-  if (user === null) { history.push('/'); }
 
   const barbersSlider = (first, movement) => {
     const max = barbers.length - 1;
@@ -69,7 +65,7 @@ const Barbers = props => {
                 <ul className={sliderClass}>
                   { barbersArray.map(e => (
                     <li key={e.id} className={styles.sliderCard}>
-                      <a href={`/b/${e.id}`}>
+                      <a href={`/barber-details/${e.id}`}>
                         <img src={e.image} alt="barber profile" className={styles.slideCardImage} />
                         <h3 className={styles.sliderCardTitle}>{ e.name }</h3>
                         <h6 className={styles.sliderCardRole}>{ e.role }</h6>
@@ -96,17 +92,14 @@ const Barbers = props => {
 
 Barbers.defaultProps = {
   barbers: [],
-  user: null,
 };
 
 Barbers.propTypes = {
-  user: PropTypes.shape({ id: PropTypes.number, token: PropTypes.string }),
   barbers: PropTypes.arrayOf(PropTypes.object),
   getBarbers: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  user: state.user,
   barbers: state.barbers,
 });
 

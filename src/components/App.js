@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropType from 'prop-types';
 import Home from '../containers/Home/Home';
 import Barbers from '../containers/BarbersIndex/Barbers';
+import BarberDetails from '../containers/BarbersShow/BarberDetails';
 
 const App = ({ store }) => (
   <Provider store={store}>
@@ -13,6 +14,9 @@ const App = ({ store }) => (
       </Route>
       <Route expect path="/barbers">
         <Barbers />
+      </Route>
+      <Route expect path="/barber-details/:idBarber">
+        <BarberDetails />
       </Route>
     </Router>
   </Provider>

@@ -47,7 +47,7 @@ Home.defaultProps = {
 };
 
 Home.propTypes = {
-  user: PropTypes.objectOf(PropTypes.string),
+  user: PropTypes.shape({ id: PropTypes.number, token: PropTypes.string }),
   removeUser: PropTypes.func.isRequired,
 };
 
