@@ -4,11 +4,14 @@
   flex-direction: column;
   position: relative;
   align-items: center;
+  justify-content: flex-start;
+  border-right: 3px solid rgba(235, 235, 235, 0.575);
 }
 
 .logo {
   width: 70%;
   height: auto;
+  margin-top: 40px;
 }
 
 .groupButton {
@@ -22,6 +25,7 @@
   border: none;
   font-size: 20px;
   padding: 10px;
+  text-align: left;
 }
 
 .active {
@@ -44,4 +48,17 @@
   flex-direction: row;
   padding: 0;
   justify-content: space-between;
+}
+
+.logOut {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.logOut > svg {
+  margin-right: 3px;
 }

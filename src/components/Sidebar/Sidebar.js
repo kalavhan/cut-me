@@ -1,8 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTwitter, faFacebook, faGooglePlusG, faVimeoV, faPinterestP,
+} from '@fortawesome/free-brands-svg-icons';
+import { faWindowClose } from '@fortawesome/free-regular-svg-icons';
 import logo from '../../images/logo.png';
 import styles from './Sidebar.module.css';
-import { faTwitter, faFacebook, faGooglePlusG, faVimeoV, faPinterestP } from '@fortawesome/free-brands-svg-icons';
 
 const Sidebar = ({ c }) => (
   <div className={styles.sidebar}>
@@ -15,6 +18,10 @@ const Sidebar = ({ c }) => (
         APPOINTMENTS
       </button>
     </div>
+    <button className={styles.logOut} type="button">
+      <FontAwesomeIcon icon={faWindowClose} />
+      Log out
+    </button>
     <ul className={styles.socialLinks}>
       <li><FontAwesomeIcon icon={faTwitter} /></li>
       <li><FontAwesomeIcon icon={faFacebook} /></li>

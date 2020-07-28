@@ -22,5 +22,38 @@
 }
 
 .sliderBarbers {
-  width: 100%; 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sliderInnerContainer {
+  width: 86%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sliderBarbers > button {
+  background-color: #97bf0f;
+  height: 60px;
+  border: none;
+  width: 70px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.buttonLeft {
+  text-align: right;
+  padding-right: 25px;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.buttonRight {
+  text-align: left;
+  padding-left: 25px;
+  border-bottom-left-radius: 40px;
+  border-top-left-radius: 40px;
 }
