@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router';
 import { setUser } from '../actions/index';
 import Loading from './Loading/Loading';
 import styles from '../style/form.module.css';
@@ -12,6 +13,7 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
   const [passwordConfirmation, setPasswordConfirm] = useState('');
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
+  const history = useHistory();
 
   const signup = e => {
     e.preventDefault();
@@ -36,6 +38,7 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
     fetch('https://calm-crag-76746.herokuapp.com/users/signup', options)
       .then(response => response.json())
       .then(data => {
+        setFormSent(false);
         if ('id' in data) {
           setFormSignupState('inactive');
           setUser(data);
@@ -44,8 +47,8 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
           setLastName('');
           setPassword('');
           setPasswordConfirm('');
+          history.push('/barbers');
         }
-        setFormSent(false);
       });
   };
 
