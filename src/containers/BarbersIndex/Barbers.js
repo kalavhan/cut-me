@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +13,29 @@ import styles from './Barbers.module.css';
 const Barbers = props => {
   const { user, barbers, getBarbers } = props;
   const history = useHistory();
+  const [sliderClass, setSliderClass] = useState(0);
+  const [barbersArray, setBarbersArray] = useState([]);
+  const [firstPosition, setFirstPosition] = useState([]);
+
   if (user === null) { history.push('/'); }
+
+  const barbersSlider = (first, movement) => {
+    const max = barbers.length - 1;
+    const second = first === max ? 0 : first + 1;
+    const third = second === max ? 0 : second + 1;
+    const fourth = third === max ? 0 : third + 1;
+    setSliderClass(movement);
+    setBarbersArray([
+      barbers[first],
+      barbers[second],
+      barbers[third],
+      barbers[fourth],
+    ]);
+    const prev = first === 0 ? max : first - 1;
+    const next = first === max ? 0 : first + 1;
+    setFirstPosition([prev, next]);
+  };
+
   if (barbers.length < 1) {
     const options = {
       method: 'GET',
@@ -26,7 +48,7 @@ const Barbers = props => {
       .then(data => {
         getBarbers(data);
       });
-  }
+  } else if (sliderClass === 0) { barbersSlider(0, styles.moveSliderStill); }
 
   return (
     <div className={styles.container}>
@@ -37,30 +59,32 @@ const Barbers = props => {
         <h1 className={styles.title}>OUR BARBERS</h1>
         <h5 className={styles.subTitle}>Please select a barber</h5>
         <div className={styles.sliderBarbers}>
-          <button type="button" className={styles.buttonLeft}>
+          <button type="button" className={styles.buttonLeft} onClick={() => barbersSlider((firstPosition[0]), styles.moveSliderLeft)}>
             <FontAwesomeIcon icon={faCaretSquareLeft} />
             &#18;
           </button>
           <div className={styles.sliderInnerContainer}>
-            { barbers.length < 1
+            { barbersArray.length < 1
               ? <h1>Loading</h1> : (
-                <>
-                  { barbers.map(e => (
-                    <div key={e.id} className={styles.sliderCard}>
-                      <img src={e.image} alt="barber profile" className={styles.slideCardImage} />
-                      <h3 className={styles.sliderCardTitle}>{ e.name }</h3>
-                      <h6 className={styles.sliderCardRole}>{ e.role }</h6>
-                      <ul className={styles.sliderCardIcons}>
-                        <li><FontAwesomeIcon icon={faTwitter} /></li>
-                        <li><FontAwesomeIcon icon={faFacebook} /></li>
-                        <li><FontAwesomeIcon icon={faPinterestP} /></li>
-                      </ul>
-                    </div>
+                <ul className={sliderClass}>
+                  { barbersArray.map(e => (
+                    <li key={e.id} className={styles.sliderCard}>
+                      <a href={`/b/${e.id}`}>
+                        <img src={e.image} alt="barber profile" className={styles.slideCardImage} />
+                        <h3 className={styles.sliderCardTitle}>{ e.name }</h3>
+                        <h6 className={styles.sliderCardRole}>{ e.role }</h6>
+                        <ul className={styles.sliderCardIcons}>
+                          <li><FontAwesomeIcon icon={faTwitter} /></li>
+                          <li><FontAwesomeIcon icon={faFacebook} /></li>
+                          <li><FontAwesomeIcon icon={faPinterestP} /></li>
+                        </ul>
+                      </a>
+                    </li>
                   ))}
-                </>
+                </ul>
               ) }
           </div>
-          <button type="button" className={styles.buttonRight}>
+          <button type="button" className={styles.buttonRight} onClick={() => barbersSlider((firstPosition[1]), styles.moveSliderRight)}>
             <FontAwesomeIcon icon={faCaretSquareRight} />
             &#18;
           </button>
