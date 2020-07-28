@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
+import PropTypes from 'prop-types';
 import { setUser } from '../actions/index';
 import Loading from './Loading/Loading';
 import styles from '../style/form.module.css';
@@ -84,6 +85,12 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
       </div>
     </>
   );
+};
+
+FormSignup.propTypes = {
+  setUser: PropTypes.func.isRequired,
+  formSignupState: PropTypes.string.isRequired,
+  setFormSignupState: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
