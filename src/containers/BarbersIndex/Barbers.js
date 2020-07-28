@@ -48,9 +48,9 @@ const Barbers = props => {
                   { barbers.map(e => (
                     <div key={e.id} className={styles.sliderCard}>
                       <img src={e.image} alt="barber profile" className={styles.slideCardImage} />
-                      <h3 className={styles.slideCardTitle}>{ e.name }</h3>
-                      <h6 classNAme={styles.slideCardRole}>{ e.role }</h6>
-                      <ul className={styles.slideCardIcons}>
+                      <h3 className={styles.sliderCardTitle}>{ e.name }</h3>
+                      <h6 className={styles.sliderCardRole}>{ e.role }</h6>
+                      <ul className={styles.sliderCardIcons}>
                         <li><FontAwesomeIcon icon={faTwitter} /></li>
                         <li><FontAwesomeIcon icon={faFacebook} /></li>
                         <li><FontAwesomeIcon icon={faPinterestP} /></li>
