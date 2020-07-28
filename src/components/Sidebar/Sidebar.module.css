@@ -1,0 +1,47 @@
+.sidebar {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+.logo {
+  width: 70%;
+  height: auto;
+}
+
+.groupButton {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.groupButton > button {
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.active {
+  background-color: #97bf0f;
+  color: #fff;
+}
+
+.inactive {
+  background-color: #fff;
+  color: #000;
+}
+
+.socialLinks {
+  width: 80%;
+  position: absolute;
+  bottom: 10px;
+  left: 10%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-content: space-between;
+}

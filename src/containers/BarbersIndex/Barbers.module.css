@@ -1,0 +1,26 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.mainContent {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  margin-bottom: 2px;
+}
+
+.subTitle {
+  margin-top: 2px;
+  color: rgb(175, 175, 175);
+}
+
+.sliderBarbers {
+  width: 100%; 
+}

@@ -29,7 +29,7 @@ const Home = props => {
       <h1 className={styles.title}>¡CUT THROUGH FASHION!</h1>
       {user !== null ? (
         <div className={styles.buttonGroup}>
-          <button type="button" className={styles.buttonAppointment}>Search for a barber!</button>
+          <button type="button" onClick={() => history.push('/barbers/')} className={styles.buttonAppointment}>Search for a barber!</button>
           <button type="button" className={styles.buttonAppointment}>My appointments</button>
         </div>
       ) : (
@@ -42,8 +42,12 @@ const Home = props => {
   );
 };
 
+Home.defaultProps = {
+  user: null,
+};
+
 Home.propTypes = {
-  user: PropTypes.objectOf(PropTypes.string).isRequired,
+  user: PropTypes.objectOf(PropTypes.string),
   removeUser: PropTypes.func.isRequired,
 };
 
