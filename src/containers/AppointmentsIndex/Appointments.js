@@ -16,9 +16,9 @@ const Appointments = ({ user }) => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`container ${styles.container}`}>
       <Sidebar c="appointments" />
-      <div className={styles.mainContent}>
+      <div className={`mainContent ${styles.mainContent}`}>
         <h2 className={styles.title}>My Appointments</h2>
         {response !== null ? (
           <table className={styles.table}>

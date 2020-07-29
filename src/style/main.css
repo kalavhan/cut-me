@@ -7,3 +7,17 @@ body, html {
 #container {
   max-width: 1500px;
 }
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.mainContent {
+  width: 85%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}

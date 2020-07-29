@@ -47,11 +47,11 @@ const Barbers = props => {
   } else if (sliderClass === 0) { barbersSlider(0, styles.moveSliderStill); }
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       { barbers.length < 1
         ? <Loading /> : null }
       <Sidebar c="barbers" />
-      <div className={styles.mainContent}>
+      <div className={`mainContent ${styles.mainContent}`}>
         <h1 className={styles.title}>OUR BARBERS</h1>
         <h5 className={styles.subTitle}>Please select a barber</h5>
         <div className={styles.sliderBarbers}>

@@ -56,10 +56,10 @@ const BarberDetails = props => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`container ${styles.container}`}>
       <Sidebar c="barbers" />
       {barberDetails === 'loading' || appointmentStatus === 'sent' ? <Loading /> : null}
-      <div className={styles.mainContent}>
+      <div className={`mainContent ${styles.mainContent}`}>
         <button type="button" className={styles.buttonLeft} onClick={() => history.push('/barbers')}>
           <FontAwesomeIcon icon={faCaretSquareLeft} />
           &#18;
