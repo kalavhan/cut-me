@@ -18,6 +18,7 @@ const BarberDetails = props => {
   const [barberDetails, setBarberDetails] = useState('loading');
   const [appointmentStatus, setAppointmentStatus] = useState('not sent');
   const [startDate, setStartDate] = useState(null);
+  const [selectDate, setSelectDate] = useState('');
 
   if (barberDetails === 'loading') {
     fetch(`https://calm-crag-76746.herokuapp.com/barbers/show/${idBarber}`, {
@@ -52,6 +53,8 @@ const BarberDetails = props => {
             setAppointmentStatus('no sent');
           }
         });
+    } else {
+      setSelectDate('date-empty');
     }
   };
 
@@ -89,11 +92,12 @@ const BarberDetails = props => {
                 timeFormat="HH:mm"
                 timeIntervals={15}
                 timeCaption="time"
-                dateFormat="MMMM dd, yyyy H:mm:ss"
+                dateFormat="MMMM dd, yyyy H:mm"
               />
               <button type="button" className={styles.buttonAppointment} onClick={() => addAppointment()}>
                 Make an appointment
               </button>
+              {selectDate === 'date-empty' && <h4 className={styles.errorMessage}>Please select a date for the appointment</h4>}
             </div>
           </>
         ) : null }
