@@ -11,6 +11,7 @@ const FormLogIn = ({ formLoginState, setFormLoginState, setUser }) => {
   const [formSent, setFormSent] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [statusPost, setStatusPost] = useState(styles.failedInactive);
   const history = useHistory();
 
   const login = e => {
@@ -34,12 +35,14 @@ const FormLogIn = ({ formLoginState, setFormLoginState, setUser }) => {
       .then(response => response.json())
       .then(data => {
         setFormSent(false);
-        if ('id' in data) {
+        if (data !== false && 'id' in data) {
           setFormLoginState('inactive');
           setUser(data);
           setEmail('');
           setPassword('');
           history.push('/barbers');
+        } else {
+          setStatusPost(styles.failed);
         }
       });
   };
@@ -51,13 +54,14 @@ const FormLogIn = ({ formLoginState, setFormLoginState, setUser }) => {
         <form className={styles.form} onSubmit={login}>
           <button className={styles.buttonClose} onClick={setFormLoginState} type="button">X</button>
           <h2>Log In</h2>
+          <h3 className={statusPost}>Wrong email or password</h3>
           <label htmlFor="email" id="email-label">
             email
-            <input type="text" id="email" onChange={e => setEmail(e.target.value)} value={email} />
+            <input type="text" id="email" onChange={e => setEmail(e.target.value)} value={email} required />
           </label>
           <label htmlFor="password" id="password-label">
             password
-            <input type="password" id="password" onChange={e => setPassword(e.target.value)} value={password} />
+            <input type="password" id="password" onChange={e => setPassword(e.target.value)} value={password} required />
           </label>
           <button className={styles.buttonNormal} type="submit">Log In</button>
         </form>

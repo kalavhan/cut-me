@@ -14,6 +14,7 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
   const [passwordConfirmation, setPasswordConfirm] = useState('');
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [statusPost, setStatusPost] = useState({ class: styles.failedInactive, text: '' });
   const history = useHistory();
 
   const signup = e => {
@@ -49,6 +50,8 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
           setPassword('');
           setPasswordConfirm('');
           history.push('/barbers');
+        } else {
+          setStatusPost({ class: styles.failed, text: data.message.split(': ')[1] });
         }
       });
   };
@@ -60,25 +63,26 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
         <form className={styles.form} onSubmit={signup}>
           <button className={styles.buttonClose} onClick={setFormSignupState} type="button">X</button>
           <h2>Sign Up</h2>
+          <h3 className={statusPost.class}>{statusPost.text}</h3>
           <label htmlFor="name" id="name-label">
             Name(s)
-            <input type="text" id="name" onChange={e => setName(e.target.value)} value={name} />
+            <input type="text" id="name" onChange={e => setName(e.target.value)} value={name} required/>
           </label>
           <label htmlFor="lastName" id="lastName-label">
             Last Name
-            <input type="text" id="lastName" onChange={e => setLastName(e.target.value)} value={lastName} />
+            <input type="text" id="lastName" onChange={e => setLastName(e.target.value)} value={lastName} required/>
           </label>
           <label htmlFor="email" id="email-label">
             Email
-            <input type="email" id="email" onChange={e => setEmail(e.target.value)} value={email} />
+            <input type="email" id="email" onChange={e => setEmail(e.target.value)} value={email} required/>
           </label>
           <label htmlFor="password" id="password-label">
             Password
-            <input type="password" id="password" onChange={e => setPassword(e.target.value)} value={password} />
+            <input type="password" id="password" onChange={e => setPassword(e.target.value)} value={password} required/>
           </label>
           <label htmlFor="passwordConfirmation" id="passwordConfirmation-label">
             Confirm Password
-            <input type="password" id="passwordConfirmation" onChange={e => setPasswordConfirm(e.target.value)} value={passwordConfirmation} />
+            <input type="password" id="passwordConfirmation" onChange={e => setPasswordConfirm(e.target.value)} value={passwordConfirmation} required/>
           </label>
           <button className={styles.buttonNormal} type="submit">Sign Up</button>
         </form>

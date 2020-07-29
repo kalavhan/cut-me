@@ -34,16 +34,11 @@
 }
 
 .form > label > input {
-  border: 0;
   font-size: 20px;
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 2px;
 }
 
-.form > label > input:focus {
-  margin-bottom: 0;
-  border-bottom: 2px solid rgb(68, 65, 240);
-}
 .form > .button {
   cursor: pointer;
   color: #fff;
@@ -75,4 +70,14 @@
 
 .inactive {
   display: none;
+}
+
+.failedInactive {
+  display: none;
+}
+
+.failed {
+  color: #f00;
+  max-width: 400px;
+  text-align: center;
 }

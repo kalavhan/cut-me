@@ -6,6 +6,7 @@ body, html {
 
 #container {
   max-width: 1500px;
+  position: relative;
 }
 
 .container {
@@ -20,4 +21,15 @@ body, html {
   display: flex;
   position: relative;
   overflow: hidden;
+}
+
+.wrong-input {
+  border: 2px solid #f00;
+}
+
+@keyframes alert-message-move {
+  0% {top: 20%;}
+  20% {top: 18%;}
+  40% {top: 20%}
+  100% {top: -30%;}
 }
