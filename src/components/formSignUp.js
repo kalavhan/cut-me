@@ -58,7 +58,7 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
       {formSent === true ? <Loading /> : null}
       <div className={`${styles.formContainer} ${formClass}`} id="signupForm">
         <form className={styles.form} onSubmit={signup}>
-          <button onClick={setFormSignupState} type="button">X</button>
+          <button className={styles.buttonClose} onClick={setFormSignupState} type="button">X</button>
           <h2>Sign Up</h2>
           <label htmlFor="name" id="name-label">
             Name(s)
@@ -80,7 +80,7 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
             Confirm Password
             <input type="password" id="passwordConfirmation" onChange={e => setPasswordConfirm(e.target.value)} value={passwordConfirmation} />
           </label>
-          <button type="submit">Sign Up</button>
+          <button className={styles.buttonNormal} type="submit">Sign Up</button>
         </form>
       </div>
     </>

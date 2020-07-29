@@ -1,0 +1,92 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.mainContent {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  height: 90%;
+  align-self: center;
+}
+
+button {
+  background-color: #97bf0f;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  padding: 0;
+  cursor: pointer;
+}
+
+.buttonLeft {
+  height: 60px;
+  width: 95px;
+  position: relative;
+  cursor: pointer;
+  text-align: right;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+  align-self: flex-end;
+}
+
+.buttonLeft > svg {
+  position: absolute;
+  right: 22px;
+}
+
+.barberImage {
+  height: 60%;
+  width: auto;
+  align-self: center;
+}
+
+.barberInfo {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.barberInfo > h2 {
+  margin-bottom: 1px;
+  width: 100%;
+  text-align: right;
+}
+
+.barberInfo > h5 {
+  margin-top: 0;
+  width: 100%;
+  text-align: right;
+}
+
+.barberInfo > table {
+  border-collapse: collapse;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.barberInfo > table > tbody > tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
+.barberInfo > table > tbody > tr > td {
+  border: 0;
+  margin: 0;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.buttonAppointment {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+  align-self: center;
+}

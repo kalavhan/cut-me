@@ -49,7 +49,7 @@ const FormLogIn = ({ formLoginState, setFormLoginState, setUser }) => {
       {formSent === true ? <Loading /> : null}
       <div className={`${styles.formContainer} ${formClass}`} id="loginForm">
         <form className={styles.form} onSubmit={login}>
-          <button onClick={setFormLoginState} type="button">X</button>
+          <button className={styles.buttonClose} onClick={setFormLoginState} type="button">X</button>
           <h2>Log In</h2>
           <label htmlFor="email" id="email-label">
             email
@@ -59,7 +59,7 @@ const FormLogIn = ({ formLoginState, setFormLoginState, setUser }) => {
             password
             <input type="password" id="password" onChange={e => setPassword(e.target.value)} value={password} />
           </label>
-          <button type="submit">Log In</button>
+          <button className={styles.buttonNormal} type="submit">Log In</button>
         </form>
       </div>
     </>

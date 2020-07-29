@@ -44,14 +44,14 @@
   margin-bottom: 0;
   border-bottom: 2px solid rgb(68, 65, 240);
 }
-.form > button {
+.form > .button {
   cursor: pointer;
   color: #fff;
   box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.2);
   border: none;
 }
 
-.form > button:nth-of-type(1) {
+.form > .buttonClose {
   position: absolute;
   right: -15px;
   top: -15px;
@@ -61,7 +61,7 @@
   border-radius: 20px;
 }
 
-.form > button:nth-of-type(2) {
+.form > .buttonNormal {
   background-color: #2cbe19;
   font-size: 17px;
   padding: 5px 20px 5px 20px;
