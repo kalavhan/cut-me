@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretSquareLeft } from '@fortawesome/free-regular-svg-icons';
@@ -13,6 +14,7 @@ import styles from './BarberDetails.module.css';
 const BarberDetails = props => {
   const { user } = props;
   const { idBarber } = useParams();
+  const history = useHistory();
   const [barberDetails, setBarberDetails] = useState('loading');
   const [appointmentStatus, setAppointmentStatus] = useState('not sent');
   const [startDate, setStartDate] = useState(null);
@@ -45,7 +47,10 @@ const BarberDetails = props => {
       })
         .then(response => response.json())
         .then(data => {
-          console.log(data);
+          if ('id' in data) {
+            history.push('/appointments')
+            setAppointmentStatus('no sent');
+          }
         });
     }
   };
