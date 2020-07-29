@@ -48,7 +48,7 @@ const BarberDetails = props => {
         .then(response => response.json())
         .then(data => {
           if ('id' in data) {
-            history.push('/appointments')
+            history.push('/appointments');
             setAppointmentStatus('no sent');
           }
         });
@@ -60,7 +60,7 @@ const BarberDetails = props => {
       <Sidebar c="barbers" />
       {barberDetails === 'loading' || appointmentStatus === 'sent' ? <Loading /> : null}
       <div className={styles.mainContent}>
-        <button type="button" className={styles.buttonLeft}>
+        <button type="button" className={styles.buttonLeft} onClick={() => history.push('/barbers')}>
           <FontAwesomeIcon icon={faCaretSquareLeft} />
           &#18;
         </button>

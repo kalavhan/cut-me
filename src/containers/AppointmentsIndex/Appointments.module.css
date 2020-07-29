@@ -1,0 +1,38 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.mainContent {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 90%;
+  align-self: center;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+.table {
+  width: 80%;
+  font-size: 20px;
+  border-collapse: collapse;
+}
+
+.table > tr > th, td {
+  text-align: center;
+}
+
+.table > tbody > tr:nth-child(odd){
+  background-color: #dddddd;
+}

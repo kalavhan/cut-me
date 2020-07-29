@@ -5,6 +5,7 @@ import PropType from 'prop-types';
 import Home from '../containers/Home/Home';
 import Barbers from '../containers/BarbersIndex/Barbers';
 import BarberDetails from '../containers/BarbersShow/BarberDetails';
+import Appointments from '../containers/AppointmentsIndex/Appointments';
 
 const App = ({ store }) => (
   <Provider store={store}>
@@ -17,6 +18,9 @@ const App = ({ store }) => (
       </Route>
       <Route expect path="/barber-details/:idBarber">
         <BarberDetails />
+      </Route>
+      <Route expect path="/appointments">
+        <Appointments />
       </Route>
     </Router>
   </Provider>
