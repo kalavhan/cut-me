@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
 body,
 html {
   font-size: 13px;
   line-height: 21px;
   margin: 0;
+  font-family: 'Cabin', sans-serif;
 }
 
 #container {

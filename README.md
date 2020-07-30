@@ -15,26 +15,30 @@ Cut me is a web application built with react as front end and Ruby On Rails as b
 - NodeJs
 
 ## Live Demo
-[Live link](https://mealpal-kalavhan.herokuapp.com/)
+[Live link](https://cut-me-barbershop.netlify.app/)
+
+## API Respository
+[Cut me API](https://github.com/kalavhan/cut-me-api/)
 
 ## Prerequisites
 - node
 
 ## Functionalities 
-- List of categories for meals
-- List of meals for each category
-- Details for each meal (Ingredients, instructions on video and text)
+- Create a new account
+- Log in
+- Make an appointment
+- See table with user appointments
 
 ## Setup
 
 Use the [git](https://git-scm.com/downloads) to clone the project to your local machine.
 ```sh
-$ git clone https://github.com/kalavhan/mealPal.git
+$ git clone https://github.com/kalavhan/cut-me.git
 ```
 
 Navigate to the extracted folder
 ```sh 
-cd mealPal
+cd cut-me
 ```
 
 Install the dependencies and modules
@@ -47,6 +51,11 @@ $ npm install
 $ npm start
 ```
 This will open the app at 127.0.0.1:3000. If it doesn't open, visit ```http://localhost:3000```
+
+### Test
+```sh
+$ npm run test
+```
 
 ## Author
 
