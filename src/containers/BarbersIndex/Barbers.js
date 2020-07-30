@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { faCaretSquareLeft, faCaretSquareRight } from '@fortawesome/free-regular-svg-icons';
@@ -14,7 +15,7 @@ const Barbers = props => {
   const [sliderClass, setSliderClass] = useState(0);
   const [barbersArray, setBarbersArray] = useState([]);
   const [firstPosition, setFirstPosition] = useState([]);
-
+  const history = useHistory();
   const barbersSlider = (first, movement) => {
     const max = barbers.length - 1;
     const second = first === max ? 0 : first + 1;
@@ -65,7 +66,7 @@ const Barbers = props => {
                 <ul className={sliderClass}>
                   { barbersArray.map(e => (
                     <li key={e.id} className={styles.sliderCard}>
-                      <a href={`/barber-details/${e.id}`}>
+                      <div role="button" onClick={() => history.push(`/barber-details/${e.id}`)} onKeyUp={() => {}} tabIndex={0}>
                         <img src={e.image} alt="barber profile" className={styles.slideCardImage} />
                         <h3 className={styles.sliderCardTitle}>{ e.name }</h3>
                         <h6 className={styles.sliderCardRole}>{ e.role }</h6>
@@ -74,7 +75,7 @@ const Barbers = props => {
                           <li><FontAwesomeIcon icon={faFacebook} /></li>
                           <li><FontAwesomeIcon icon={faPinterestP} /></li>
                         </ul>
-                      </a>
+                      </div>
                     </li>
                   ))}
                 </ul>

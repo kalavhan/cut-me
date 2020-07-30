@@ -16,7 +16,7 @@ const App = ({ store }) => (
       <Route expect path="/barbers">
         <Barbers />
       </Route>
-      <Route expect path="/barber-details/:idBarber">
+      <Route path="/barber-details/:idBarber">
         <BarberDetails />
       </Route>
       <Route expect path="/appointments">
