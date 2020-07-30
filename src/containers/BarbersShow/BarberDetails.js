@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import { useParams, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretSquareLeft } from '@fortawesome/free-regular-svg-icons';

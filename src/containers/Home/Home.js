@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { removeUser } from '../../actions/index';
 import HomeSlider from '../../components/HomeSliderFolder/HomeSlider';
@@ -29,12 +29,12 @@ const Home = props => {
       <h1 className={styles.title}>¡CUT THROUGH FASHION!</h1>
       {user !== null ? (
         <div className={styles.buttonGroup}>
-          <button type="button" onClick={() => history.push('/barbers/')} className={styles.buttonAppointment}>Search for a barber!</button>
-          <button type="button" className={styles.buttonAppointment}>My appointments</button>
+          <button type="button" onClick={() => history.push('/barbers')} className={styles.buttonAppointment}>Search for a barber!</button>
+          <button type="button" className={styles.buttonAppointment} data-testid="myAppointmentsButton">My appointments</button>
         </div>
       ) : (
         <div className={styles.buttonGroup}>
-          <button onClick={() => { setFormLoginState('active'); }} className={styles.buttonHome} type="button">Log In</button>
+          <button onClick={() => setFormLoginState('active')} className={styles.buttonHome} type="button">Log In</button>
           <button onClick={() => setFormSignupState('active')} className={styles.buttonHome} type="button">Sign Up</button>
         </div>
       )}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { setUser } from '../actions/index';
 import Loading from './Loading/Loading';
@@ -63,7 +63,7 @@ const FormLogIn = ({ formLoginState, setFormLoginState, setUser }) => {
             password
             <input type="password" id="password" onChange={e => setPassword(e.target.value)} value={password} required />
           </label>
-          <button className={styles.buttonNormal} type="submit">Log In</button>
+          <button data-testid="submitLogIn" className={styles.buttonNormal} type="submit">Log In</button>
         </form>
       </div>
     </>

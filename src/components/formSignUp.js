@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { setUser } from '../actions/index';
 import Loading from './Loading/Loading';
@@ -54,6 +54,7 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
           setStatusPost({ class: styles.failed, text: data.message.split(': ')[1] });
         }
       });
+    e.target.restart();
   };
 
   return (
@@ -66,23 +67,23 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
           <h3 className={statusPost.class}>{statusPost.text}</h3>
           <label htmlFor="name" id="name-label">
             Name(s)
-            <input type="text" id="name" onChange={e => setName(e.target.value)} value={name} required/>
+            <input type="text" id="name" onChange={e => setName(e.target.value)} value={name} required />
           </label>
           <label htmlFor="lastName" id="lastName-label">
             Last Name
-            <input type="text" id="lastName" onChange={e => setLastName(e.target.value)} value={lastName} required/>
+            <input type="text" id="lastName" onChange={e => setLastName(e.target.value)} value={lastName} required />
           </label>
           <label htmlFor="email" id="email-label">
             Email
-            <input type="email" id="email" onChange={e => setEmail(e.target.value)} value={email} required/>
+            <input type="email" id="email" onChange={e => setEmail(e.target.value)} value={email} required />
           </label>
           <label htmlFor="password" id="password-label">
             Password
-            <input type="password" id="password" onChange={e => setPassword(e.target.value)} value={password} required/>
+            <input type="password" id="password" onChange={e => setPassword(e.target.value)} value={password} required />
           </label>
           <label htmlFor="passwordConfirmation" id="passwordConfirmation-label">
             Confirm Password
-            <input type="password" id="passwordConfirmation" onChange={e => setPasswordConfirm(e.target.value)} value={passwordConfirmation} required/>
+            <input type="password" id="passwordConfirmation" onChange={e => setPasswordConfirm(e.target.value)} value={passwordConfirmation} required />
           </label>
           <button className={styles.buttonNormal} type="submit">Sign Up</button>
         </form>

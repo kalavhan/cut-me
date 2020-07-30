@@ -10,6 +10,6 @@ describe('Test for the user reducer', () => {
   });
 
   it('By sending a wrong type it should return null as the user', () => {
-    expect(userReducer(null, {type: '', user: null})).toEqual(null);
+    expect(userReducer(null, { type: '', user: null })).toEqual(null);
   });
 });
