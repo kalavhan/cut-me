@@ -24,7 +24,7 @@
   animation: fadeIn 6s;
 }
 
-.homeSlider > .inactive { 
+.homeSlider > .inactive {
   display: none;
 }
 
@@ -61,12 +61,12 @@
 }
 
 @keyframes fadeIn {
-  0% {opacity: 0;} 
-  30% {opacity: 1;}
-  70% {opacity: 1;}
-  100% {opacity: 0;}
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @keyframes fadeOut {
-  100% {display: none;}
+  100% { display: none; }
 }

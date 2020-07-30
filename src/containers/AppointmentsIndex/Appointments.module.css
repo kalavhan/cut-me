@@ -21,10 +21,11 @@
   border-collapse: collapse;
 }
 
-.table > tr > th, td {
+.table > tr > th,
+td {
   text-align: center;
 }
 
-.table > tbody > tr:nth-child(odd){
-  background-color: #dddddd;
+.table > tbody > tr:nth-child(odd) {
+  background-color: #ddd;
 }
