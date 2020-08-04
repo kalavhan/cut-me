@@ -10,19 +10,23 @@ import logo from '../../images/logo.png';
 import { removeUser } from '../../actions/index';
 import styles from './Sidebar.module.css';
 
-const Sidebar = ({ user, c, removeUser }) => {
+const Sidebar = ({ user, currentPage, removeUser }) => {
   const history = useHistory();
   if (user === null) { history.push('/'); }
   return (
     <div className={styles.sidebar}>
       <img className={styles.logo} src={logo} alt="cut me logo" />
       <div className={styles.groupButton}>
-        <button type="button" className={c === 'barbers' ? styles.active : styles.inactive} onClick={() => history.push('/barbers')}>
+        <button
+          type="button"
+          className={currentPage === 'barbers' ? styles.active : styles.inactive}
+          onClick={() => history.push('/barbers')}
+        >
           BARBERS
         </button>
         <button
           type="button"
-          className={c === 'appointments' ? styles.active : styles.inactive}
+          className={currentPage === 'appointments' ? styles.active : styles.inactive}
           onClick={() => history.push('/appointments')}
         >
           APPOINTMENTS
@@ -49,7 +53,7 @@ Sidebar.defaultProps = {
 Sidebar.propTypes = {
   user: PropTypes.shape({ id: PropTypes.number, token: PropTypes.string }),
   removeUser: PropTypes.func.isRequired,
-  c: PropTypes.string.isRequired,
+  currentPage: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({

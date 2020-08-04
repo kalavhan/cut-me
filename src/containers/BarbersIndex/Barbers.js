@@ -49,8 +49,7 @@ const Barbers = props => {
 
   return (
     <div className="container">
-      { barbers.length < 1
-        ? <Loading /> : null }
+      { !barbers.length ? <Loading /> : null }
       <Sidebar c="barbers" />
       <div className={`mainContent ${styles.mainContent}`}>
         <h1 className={styles.title}>OUR BARBERS</h1>
