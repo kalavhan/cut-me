@@ -30,29 +30,18 @@
   padding: 0;
   position: relative;
   cursor: pointer;
+  text-align: center;
 }
 
 .buttonLeft {
-  text-align: right;
   border-bottom-right-radius: 40px;
   border-top-right-radius: 40px;
 }
 
-.buttonLeft > svg {
-  position: absolute;
-  right: 22px;
-}
-
 .buttonRight {
-  text-align: left;
   border-bottom-left-radius: 40px;
   border-top-left-radius: 40px;
   z-index: 10;
-}
-
-.buttonRight > svg {
-  position: absolute;
-  left: 22px;
 }
 
 .sliderInnerContainer {

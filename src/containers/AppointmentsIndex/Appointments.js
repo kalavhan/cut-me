@@ -17,7 +17,7 @@ const Appointments = ({ user }) => {
 
   return (
     <div className={`container ${styles.container}`}>
-      <Sidebar c="appointments" />
+      <Sidebar currentPage="appointments" />
       <div className={`mainContent ${styles.mainContent}`}>
         <h2 className={styles.title}>My Appointments</h2>
         {response !== null ? (

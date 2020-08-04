@@ -59,7 +59,7 @@ const BarberDetails = props => {
 
   return (
     <div className={`container ${styles.container}`}>
-      <Sidebar c="barbers" />
+      <Sidebar currentPage="barbers" />
       {barberDetails === 'loading' || appointmentStatus === 'sent' ? <Loading /> : null}
       <div className={`mainContent ${styles.mainContent}`}>
         <button type="button" className={styles.buttonLeft} onClick={() => history.push('/barbers')}>
