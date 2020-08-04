@@ -85,6 +85,13 @@
   padding: 10px;
 }
 
+.sliderCard > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .slideCardImage {
   height: 400px;
   width: auto;

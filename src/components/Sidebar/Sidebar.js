@@ -57,8 +57,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  removeUser: user => {
-    dispatch(removeUser(user));
+  removeUser: () => {
+    dispatch(removeUser());
   },
 });
 

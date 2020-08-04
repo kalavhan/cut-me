@@ -6,11 +6,11 @@ export const setUser = user => {
   });
 };
 
-export const removeUser = user => {
+export const removeUser = () => {
   window.sessionStorage.removeItem('user');
   return ({
     type: 'REMOVE_USER_INFO',
-    user,
+    user: null,
   });
 };
 
