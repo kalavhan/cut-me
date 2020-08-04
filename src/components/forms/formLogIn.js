@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { setUser } from '../actions/index';
-import Loading from './Loading/Loading';
-import styles from '../style/form.module.css';
+import { setUser } from '../../actions/index';
+import Loading from '../Loading/Loading';
+import styles from './form.module.css';
 
 const FormLogIn = ({ formLoginState, setFormLoginState, setUser }) => {
   const formClass = formLoginState === 'active' ? styles.active : styles.inactive;

@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { removeUser } from '../../actions/index';
 import HomeSlider from '../../components/HomeSliderFolder/HomeSlider';
-import FormLogin from '../../components/formLogIn';
-import FormSignup from '../../components/formSignUp';
+import FormLogin from '../../components/forms/formLogIn';
+import FormSignup from '../../components/forms/formSignUp';
 import styles from './Home.module.css';
 
 const Home = props => {
