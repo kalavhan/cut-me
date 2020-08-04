@@ -54,7 +54,6 @@ const FormSignup = ({ formSignupState, setFormSignupState, setUser }) => {
           setStatusPost({ class: styles.failed, text: data.message.split(': ')[1] });
         }
       });
-    e.target.restart();
   };
 
   return (
