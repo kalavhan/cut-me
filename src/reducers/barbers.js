@@ -1,10 +1,5 @@
-const barbersReducer = (state = [], action) => {
-  switch (action.type) {
-    case 'GET_BARBERS':
-      return action.barbers;
-    default:
-      return state;
-  }
-};
+import { GET_BARBERS } from '../actions/types';
+
+const barbersReducer = (state = [], { type, barbers }) => (type === GET_BARBERS ? barbers : state);
 
 export default barbersReducer;
