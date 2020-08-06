@@ -1,0 +1,129 @@
+.mainContent {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 2px;
+}
+
+.subTitle {
+  margin-top: 2px;
+  color: rgb(175, 175, 175);
+}
+
+.sliderBarbers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliderBarbers > button {
+  background-color: #97bf0f;
+  height: 60px;
+  border: none;
+  width: 95px;
+  font-size: 20px;
+  color: #fff;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+
+.buttonLeft {
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.buttonRight {
+  border-bottom-left-radius: 40px;
+  border-top-left-radius: 40px;
+  z-index: 10;
+}
+
+.sliderInnerContainer {
+  overflow: scroll;
+}
+
+.sliderInnerContainer > ul {
+  display: flex;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sliderInnerContainer > ul > li > a {
+  color: #000;
+  text-decoration: none;
+}
+
+.sliderInnerContainer > ul > li > a:visited {
+  color: #000;
+}
+
+.sliderCard {
+  min-width: 215px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.sliderCard > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideCardImage {
+  height: 400px;
+  width: auto;
+  max-width: 80%;
+}
+
+.sliderCardTitle {
+  font-size: 28px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #000;
+}
+
+.sliderCardRole {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgba(114, 114, 114, 0.822);
+}
+
+.sliderCardIcons {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-between;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+  color: rgb(149, 149, 149);
+}
+
+.sliderCardIcons > li {
+  border: 1px solid rgb(149, 149, 149);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  cursor: pointer;
+}

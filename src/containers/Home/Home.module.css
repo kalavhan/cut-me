@@ -1,0 +1,66 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 48px;
+  color: #fff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  z-index: 2;
+}
+
+.buttonGroup {
+  z-index: 2;
+}
+
+.home > .buttonGroup > button {
+  background-color: #2cbe19;
+  border: 0;
+  height: 30px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 15px;
+  margin: 0 10px 0 10px;
+}
+
+.buttonHome {
+  width: 130px;
+  font-size: 13px;
+}
+
+.buttonAppointment {
+  width: 180px;
+  font-size: 14px;
+}
+
+.logOut {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: green;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.labelOr {
+  z-index: 2;
+  font-size: 12px;
+}
+
+.loginFormActive {
+  display: flex;
+}
+
+.loginFormInactive {
+  display: none;
+}

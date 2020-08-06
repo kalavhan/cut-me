@@ -1,68 +1,84 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)
+![issues](https://img.shields.io/github/issues/kalavhan/restaurant-page)
 
-## Available Scripts
+# Project: Cut me
 
-In the project directory, you can run:
+Cut me is a web application built with react as front end and Ruby On Rails as backend, the app is designed for barber shops, especially for the clients of those; giving them the opportunity to learn about the prices of the services and make appointments
 
-### `yarn start`
+![Home](https://user-images.githubusercontent.com/47485749/88884067-03d88100-d1f3-11ea-93cf-94c5904562d1.png)
+![barbers](https://user-images.githubusercontent.com/47485749/88884098-12bf3380-d1f3-11ea-92a0-d4dc3fdd3924.png)
+![barber-details](https://user-images.githubusercontent.com/47485749/88884128-1eaaf580-d1f3-11ea-9f8d-59f830a8bf9f.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built With
+- Javascript(ES6)
+- React
+- NodeJs
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Live Demo
+[Live link](https://cut-me-barbershop.netlify.app/)
 
-### `yarn test`
+## API Respository
+[Cut me API](https://github.com/kalavhan/cut-me-api/)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisites
+- node
 
-### `yarn build`
+## Functionalities 
+- Create a new account
+- Log in
+- Make an appointment
+- See table with user appointments
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Use the [git](https://git-scm.com/downloads) to clone the project to your local machine.
+```sh
+$ git clone https://github.com/kalavhan/cut-me.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Navigate to the extracted folder
+```sh 
+cd cut-me
+```
 
-### `yarn eject`
+Install the dependencies and modules
+```sh
+$ npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Usage
+```sh
+$ npm start
+```
+This will open the app at 127.0.0.1:3000. If it doesn't open, visit ```http://localhost:3000```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Test
+```sh
+$ npm run test
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Author
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+👤 **Josue Brigido**
 
-## Learn More
+[Github](https://github.com/kalavhan) | [Twitter](https://twitter.com/kalavhan) | [LinkedIn](https://linkedin.com/in/kalavhan)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## 🤝 Contributing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Contributions, issues and feature requests are welcome!
 
-### Analyzing the Bundle Size
+## Show your support
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Give a ⭐️ if you like this project!
 
-### Making a Progressive Web App
+## Acknowledgements
+- [Microverse](https://www.microverse.org/)
+- [The Odin Project](https://www.theodinproject.com/)
+- [Freecodecamp](http://freecodecamp.org/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## 📝 License
 
-### Advanced Configuration
+This project is licensed under MIT license - see [LICENSE](/LICENSE) for more details.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

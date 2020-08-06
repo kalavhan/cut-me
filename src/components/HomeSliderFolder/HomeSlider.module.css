@@ -1,0 +1,72 @@
+.homeSlider {
+  position: absolute;
+  height: 100vh;
+  max-height: 100%;
+  width: 100%;
+  background-color: #ffb400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.sliderImage {
+  position: absolute;
+  align-self: center;
+  width: auto;
+  max-height: 80%;
+  display: none;
+}
+
+.homeSlider > .active {
+  display: block;
+  color: blue;
+  animation: fadeIn 6s;
+}
+
+.homeSlider > .inactive {
+  display: none;
+}
+
+.ulButtons {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  right: 10px;
+  bottom: 10px;
+  list-style: none;
+}
+
+.ulButtons > li {
+  margin: 0;
+  padding: 0;
+}
+
+.ulButtons > li > button {
+  z-index: 2;
+  cursor: pointer;
+  font-size: 1px;
+  padding: 5px;
+  width: 13px;
+  border: none;
+  border-radius: 6px;
+}
+
+.ulButtons > li > .active {
+  background-color: blue;
+}
+
+.ulButtons > li > .inactive {
+  background-color: aliceblue;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes fadeOut {
+  100% { display: none; }
+}
