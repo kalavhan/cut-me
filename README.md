@@ -30,10 +30,12 @@
 * [Prerequisites](#prerequisites)
 * [Setup](#setup)
 * [Usage](#usage)
-* [Live Version](#live-version)
-* [Roadmap](#roadmap)
-* [License](#license)
+* [Test](#test)
+* [Live Demo](#live-demo)
+* [API Repository](#api-repository)
 * [Authors](#authors)
+* [Acknowledgments](#acknowledgments)
+* [License](#license)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
