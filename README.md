@@ -5,7 +5,7 @@
  
   <h3 align="center">Cut me</h3>
   <p align="center">
-    Repository for the React front-end of Cut me, an appointments web application
+    Repository for the front-end of Cut me, an appointments web application built with React and Ruby on Rails.
     <br />
     <a href="#table-of-contents"><strong>Explore the docs »</strong></a>
     <br />
