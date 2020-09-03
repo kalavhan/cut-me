@@ -18,49 +18,61 @@
 </p>
 
 ![Home](https://user-images.githubusercontent.com/47485749/88884067-03d88100-d1f3-11ea-93cf-94c5904562d1.png)
-![barbers](https://user-images.githubusercontent.com/47485749/88884098-12bf3380-d1f3-11ea-92a0-d4dc3fdd3924.png)
-![barber-details](https://user-images.githubusercontent.com/47485749/88884128-1eaaf580-d1f3-11ea-9f8d-59f830a8bf9f.png)
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Functions](#functions)
+  * [Features](#features)
   * [Built With](#built-with)
-* [Prerequisites](#prerequisites)
-* [Setup](#setup)
-* [Usage](#usage)
-* [Test](#test)
+* [Screenshots](#screenshots)
+* [Installation](#installation)
+  * [Prerequisites](#prerequisites)
+  * [Setup](#setup)
+  * [Usage](#usage)
+  * [Test](#test)
 * [Live Demo](#live-demo)
 * [API Repository](#api-repository)
-* [Authors](#authors)
-* [Acknowledgments](#acknowledgments)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 * [License](#license)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 Cut me is a web application built with react as front end and Ruby On Rails as backend, the app is designed for barber shops, especially for the clients of those; giving them the opportunity to learn about the prices of the services and make appointments
 
-## Functions
+## Features
  - Create an account
  - Log in to account
  - Homepage
  - List of barbers
  - Baber profile page
  - Make an appointment with a barber
- - Consult your appointments
+ - Check your appointments
 
 ## Built With
 - Javascript(ES6)
 - React
 - NodeJs
 
-## Prerequisites
+## Screenshots
+
+### Home
+![Home](https://user-images.githubusercontent.com/47485749/88884067-03d88100-d1f3-11ea-93cf-94c5904562d1.png)
+
+### List of barbers
+![barbers](https://user-images.githubusercontent.com/47485749/88884098-12bf3380-d1f3-11ea-92a0-d4dc3fdd3924.png)
+
+### Barber details
+![barber-details](https://user-images.githubusercontent.com/47485749/88884128-1eaaf580-d1f3-11ea-9f8d-59f830a8bf9f.png)
+
+## Installation
+
+### Prerequisites
  - Git
  - Node.js
 
-## Setup
-
+### Setup
 Use the [git](https://git-scm.com/downloads) to clone the project to your local machine.
 ```sh
 $ git clone https://github.com/kalavhan/cut-me.git
@@ -90,10 +102,10 @@ $ npm run test
 ## Live Demo
 [Live link](https://cut-me-barbershop.netlify.app/)
 
-## API Respository
+## API Repository
 [Cut me API](https://github.com/kalavhan/cut-me-api/)
 
-## Author
+## Contact
 
 👤 **Josue Brigido**
 
