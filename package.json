@@ -47,7 +47,7 @@
   "devDependencies": {
     "@testing-library/dom": "^7.21.6",
     "@testing-library/react": "^10.4.7",
-    "stylelint": "^13.3.3",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-csstree-validator": "^1.8.0",
     "stylelint-scss": "^3.17.2"
